@@ -229,26 +229,26 @@ nginx:
   #   readOnlyRootFilesystem: true
 
 internalDatabase:
-  enabled: true
+  enabled: false
   name: nextcloud
 
 ##
 ## External database configuration
 ##
 externalDatabase:
-  enabled: false
+  enabled: mariadb
 
   ## Supported database engines: mysql or postgresql
   type: mysql
 
   ## Database host
-  host:
+  host: localhost
 
   ## Database user
   user: nextcloud
 
   ## Database password
-  password:
+  password: nextclouddb
 
   ## Database name
   database: nextcloud
@@ -265,7 +265,7 @@ externalDatabase:
 ##
 mariadb:
   ## Whether to deploy a mariadb server to satisfy the applications database requirements. To use an external database set this to false and configure the externalDatabase parameters
-  enabled: false
+  enabled: true
 
   auth:
     database: nextcloud
